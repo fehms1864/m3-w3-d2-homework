@@ -1,0 +1,67 @@
+@import 'colors';
+
+//Global
+* {
+    color: $white;
+    font-size: 1.2rem;
+}
+@mixin paddingAndCenter {
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+@mixin containerSectionColors($color) {
+    background-color: $color;
+    height: 100%;
+}
+
+.container {
+    background-color: $softYellow;
+    border: 1px solid #000;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+
+    .left {
+        @include containerSectionColors($desaturatedDarkGreen);
+        width: 69%;
+        position: relative;
+
+        p {
+            @include paddingAndCenter();
+        }
+    }
+
+    .right {
+        @include containerSectionColors($desaturatedDarkYellow);
+        position: relative;
+        width: 29%;
+
+        p {
+            @include paddingAndCenter();
+        }
+
+        .button {
+            background-color: $brightYellow;
+            color: $desaturatedDarkGreen;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 7em;
+            height: 2.5em;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.5em 2em;
+
+            //this is to center content vertically
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -120%);
+        }
+    }
+
+}
